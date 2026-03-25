@@ -7,8 +7,8 @@ phases:
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 343540011649.dkr.ecr.ap-south-1.amazonaws.com
     
       # create a unique version
-      - export IMAGE_TAG=$(date +%s)
-      - echo $IMAGE_TAG
+      - export IMAGE_TAG=(date +%s)
+
 
     build:
     commands:
