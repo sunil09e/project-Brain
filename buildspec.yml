@@ -22,4 +22,4 @@ phases:
 
       - aws eks update-kubeconfig --region ap-south-1 --name brain-cluster
 
-      - kubectl apply -f deployment.yml 
+      - kubectl apply -f deployment.yaml 
