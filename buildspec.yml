@@ -24,6 +24,3 @@ phases:
       # Push to ECR
       - docker push 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:$IMAGE_TAG
 
-      # Update Kubernetes deployment
-      - kubectl set image deployment/brain-deployment \
-        brain-container=343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:$IMAGE_TAG
