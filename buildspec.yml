@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       # Login to ECR
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 343540011649.dkr.ecr.ap-south-1.amazonaws.co*m
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 343540011649.dkr.ecr.ap-south-1.amazonaws.com
 
       # Create unique version (auto)
       - IMAGE_TAG=$(date +%s)
