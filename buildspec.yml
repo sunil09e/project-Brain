@@ -15,6 +15,8 @@ phases:
       # Tag with version
       - docker tag brain-tasks-app:latest 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:latest
 
+      - docker images
+
   post_build:
     commands:
       # Push to ECR
