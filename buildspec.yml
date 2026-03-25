@@ -9,6 +9,8 @@ phases:
       # Create unique version (auto)
       - IMAGE_TAG=$(date +%s)
 
+      - aws eks update-kubeconfig --region ap-south-1 --name brain-cluster
+
   build:
     commands:
       # Build Docker image
