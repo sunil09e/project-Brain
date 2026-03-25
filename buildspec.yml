@@ -4,10 +4,7 @@ phases:
   pre_build:
     commands:
       # Login to ECR
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 343540011649.dkr.ecr.ap-south-1.amazonaws.com
-    
-      # create a unique version
-      - export IMAGE_TAG= latest
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 343540011649.dkr.ecr.ap-south-1.amazonaws.co
 
 
     build:
@@ -16,10 +13,10 @@ phases:
       - docker build -t brain-tasks-app .
 
       # Tag with version
-      - docker tag brain-tasks-app:latest 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:$IMAGE_TAG
+      - docker tag brain-tasks-app:latest 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:latest
 
   post_build:
     commands:
       # Push to ECR
-      - docker push 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:$IMAGE_TAG
+      - docker push 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:latest
 
