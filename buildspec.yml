@@ -8,7 +8,8 @@ phases:
     
       # create a unique version
       - export IMAGE_TAG=$(date +%s)
-  
+      - echo $IMAGE_TAG
+
     build:
     commands:
       # Build Docker image
