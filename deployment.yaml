@@ -15,5 +15,6 @@ spec:
       containers:
       - name: brain-tasks-deployment
         image: 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:latest
+        imagePullPolicy: Always
         ports:
           - containerPort: 80
