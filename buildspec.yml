@@ -10,7 +10,7 @@ phases:
     build:
     commands:
       # Build Docker image
-      - docker build -t brain-tasks-app .
+      - docker build -t brain-tasks-app:latest .
 
       # Tag with version
       - docker tag brain-tasks-app:latest 343540011649.dkr.ecr.ap-south-1.amazonaws.com/brain-task:latest
