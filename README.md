@@ -150,7 +150,9 @@ GitHub → CodeBuild → ECR → EKS
 /aws/codepipeline/project-1
 
 🔹 Application Logs
+
 Viewed using:
+
 kubectl logs <pod-name>
 
 
