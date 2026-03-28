@@ -19,8 +19,10 @@ AWS CloudWatch (Monitoring)
 
 
 📂 Project Structure
+
 .
 ├── Dockerfile
+
 ├── buildspec.yml
 ├── deployment.yaml
 ├── service.yaml
