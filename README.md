@@ -97,6 +97,7 @@ AWS CloudWatch (Monitoring)
  🔹Access Application
 
 kubectl get svc
+
 👉 Copy EXTERNAL-IP and open in browser
 
 🔧 CodeBuild
