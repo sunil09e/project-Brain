@@ -21,14 +21,18 @@ AWS CloudWatch (Monitoring)
 📂 Project Structure
 
 .
-├── Dockerfile
 
-├── buildspec.yml
+├── Dockerfile 
+
+├── buildspec.yml 
 
 ├── deployment.yaml
+
 ├── service.yaml
+
 ├── aws-auth.yaml
-├── dist/                # React production build
+
+├── dist/                  # React production build
 └── README.md
 
     
@@ -126,9 +130,9 @@ http://abfdd0cb6ea7b487cb4997762fe053df-1603066755.ap-south-1.elb.amazonaws.com
 
 🔑 Key Points
 
-Docker is used to containerize the application
-ECR stores Docker images
-EKS runs containers as pods
+Docker is used to containerize the application 
+ECR stores Docker images 
+EKS runs containers as pods 
 CodeBuild automates build and push
 CodePipeline automates CI/CD workflow
 LoadBalancer exposes application to internet
