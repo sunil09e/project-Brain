@@ -82,7 +82,7 @@ AWS CloudWatch (Monitoring)
 
  🔹Cluster Setup
 
-  eksctl create cluster --name brain-cluster --region ap-south-1
+  eksctl create cluster --name brain-cluster --region ap-south-1 --node-type t2.medium --nodes 2
   
   aws eks update-kubeconfig --region ap-south-1 --name brain-cluster
   
