@@ -7,14 +7,23 @@ This project demonstrates deploying a React application to a production-ready Ku
 The application is built and served using NGINX, containerized with Docker, pushed to AWS ECR, and deployed on Amazon EKS.
 
 🛠️ Technologies Used
+
 React.js (Frontend)
+
 Docker (Containerization)
+
 NGINX (Static file server)
+
 AWS ECR (Container Registry)
+
 Amazon EKS (Kubernetes Cluster)
+
 Kubernetes (kubectl)
+
 AWS CodeBuild (Build automation)
+
 AWS CodePipeline (CI/CD)
+
 AWS CloudWatch (Monitoring)
 
 
