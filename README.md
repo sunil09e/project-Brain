@@ -52,11 +52,14 @@ AWS CloudWatch (Monitoring)
 
 🔹 Clone Repository
 git clone https://github.com/Vennilavanguvi/Brain-Tasks-App.git
+
 cd Brain-Tasks-App
 
 
 🔹 Build Docker Image
+
 docker build -t brain-tasks-app .
+
 docker run -p 3000:80 brain-tasks-app
 
 👉 Open: http://localhost:3000
