@@ -30,6 +30,7 @@ AWS CloudWatch (Monitoring)
 
    
 📂 Project Structure
+
 .
 
 ├── Dockerfile 
@@ -50,40 +51,44 @@ AWS CloudWatch (Monitoring)
 ⚙️ Setup Instructions
 
 🔹 Clone Repository
-git clone https://github.com/Vennilavanguvi/Brain-Tasks-App.git
+   git clone https://github.com/Vennilavanguvi/Brain-Tasks-App.git
 
-cd Brain-Tasks-App
+   cd Brain-Tasks-App
 
 
 🔹 Build Docker Image
 
-docker build -t brain-tasks-app .
+  docker build -t brain-tasks-app .
 
-docker run -p 3000:80 brain-tasks-app
+  docker run -p 3000:80 brain-tasks-app
 
-👉 Open: http://localhost:3000
+  👉 Open: http://localhost:3000
 
 
 🔹 Push Image to ECR
-aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin <ECR_URL>
 
-docker tag brain-tasks-app:latest <ECR_URL>/brain-task:latest
+  aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin <ECR_URL>
 
-docker push <ECR_URL>/brain-task:latest
+  docker tag brain-tasks-app:latest <ECR_URL>/brain-task:latest
+
+  docker push <ECR_URL>/brain-task:latest
 
 
 ☸️ Kubernetes (EKS)
 
 Cluster Setup
 
-eksctl create cluster --name brain-cluster --region ap-south-1
-aws eks update-kubeconfig --region ap-south-1 --name brain-cluster
-kubectl get nodes
+  eksctl create cluster --name brain-cluster --region ap-south-1
+  
+  aws eks update-kubeconfig --region ap-south-1 --name brain-cluster
+  
+  kubectl get nodes
 
 Deployment
 
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+  kubectl apply -f deployment.yaml
+
+  kubectl apply -f service.yaml
 
 Access Application
 
