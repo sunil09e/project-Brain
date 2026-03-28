@@ -22,7 +22,6 @@ AWS CloudWatch (Monitoring)
 
 .
 ├── Dockerfile
-
 ├── buildspec.yml
 ├── deployment.yaml
 ├── service.yaml
