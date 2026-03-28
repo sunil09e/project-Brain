@@ -6,6 +6,8 @@ This project demonstrates deploying a React application to a production-ready Ku
 
 The application is built and served using NGINX, containerized with Docker, pushed to AWS ECR, and deployed on Amazon EKS.
 
+
+
 🛠️ Technologies Used
 
 React.js (Frontend)
@@ -28,6 +30,7 @@ AWS CloudWatch (Monitoring)
 
 
 
+        
    
 📂 Project Structure
 
@@ -47,7 +50,8 @@ AWS CloudWatch (Monitoring)
 
 └── README.md
 
-    
+
+     
 ⚙️ Setup Instructions
 
 🔹 Clone Repository
@@ -76,7 +80,7 @@ AWS CloudWatch (Monitoring)
 
 ☸️ Kubernetes (EKS)
 
-Cluster Setup
+ 🔹Cluster Setup
 
   eksctl create cluster --name brain-cluster --region ap-south-1
   
@@ -84,13 +88,13 @@ Cluster Setup
   
   kubectl get nodes
 
-Deployment
+ 🔹Deployment
 
   kubectl apply -f deployment.yaml
 
   kubectl apply -f service.yaml
 
-Access Application
+ 🔹Access Application
 
 kubectl get svc
 👉 Copy EXTERNAL-IP and open in browser
@@ -98,16 +102,23 @@ kubectl get svc
 🔧 CodeBuild
 
 Used to build Docker image
+
 Push image to ECR
+
 Execute Kubernetes deployment commands
+
 Commands defined in buildspec.yml
 
+  
 
 🔐 aws-auth ConfigMap
 
 Maps IAM roles to Kubernetes RBAC
+
 Allows:
+
 Worker nodes to join cluster
+
 CodeBuild to deploy resources
 
 
