@@ -153,7 +153,7 @@ GitHub → CodeBuild → ECR → EKS
 
 Viewed using:
 
-kubectl logs <pod-name>
+kubectl logs  pod-name
 
 
 🌐 Application Access
