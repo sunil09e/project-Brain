@@ -30,7 +30,6 @@ AWS CloudWatch (Monitoring)
 
    
 📂 Project Structure
-
 .
 
 ├── Dockerfile 
@@ -69,6 +68,7 @@ docker run -p 3000:80 brain-tasks-app
 aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin <ECR_URL>
 
 docker tag brain-tasks-app:latest <ECR_URL>/brain-task:latest
+
 docker push <ECR_URL>/brain-task:latest
 
 
