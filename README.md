@@ -78,7 +78,7 @@ The application is built and served using NGINX, containerized with Docker, push
   docker push <ECR_URL>/brain-task:latest
 
 
-**☸️ Kubernetes (EKS)**
+# ☸️ Kubernetes (EKS)
 
  **🔹Cluster Setup**
 
@@ -132,21 +132,30 @@ GitHub → CodeBuild → ECR → EKS
 **🔹 Pipeline Stages**
 
 **1. Source Stage**
+
        Fetch code from GitHub
+
 **2. Build Stage (CodeBuild)**
+
        Build Docker image
+       
        Push image to ECR
+       
        Update Kubernetes deployment
+
 **3. Deploy Stage**
+    
         Deploy application to EKS
 
 
 # 📊 Monitoring (CloudWatch Logs)
 
 **🔹 Build Logs**
+
 /aws/codebuild/newproject
 
 **🔹 Pipeline Logs**
+
 /aws/codepipeline/project-1
 
 **🔹 Application Logs**
@@ -162,7 +171,7 @@ LoadBalancer URL:
 http://abfdd0cb6ea7b487cb4997762fe053df-1603066755.ap-south-1.elb.amazonaws.com
 
 
-**🔑 Key Points**
+# 🔑 Key Points
 
 - Docker is used to containerize the application 
 
