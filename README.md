@@ -1,6 +1,6 @@
-🚀 Brain Tasks App Deployment using AWS EKS & CI/CD
+# 🚀 Brain Tasks App Deployment using AWS EKS & CI/CD
 
-📌 Project Overview
+# 📌 Project Overview
 
 This project demonstrates deploying a React application to a production-ready Kubernetes environment using AWS services and CI/CD pipeline.
 
@@ -8,31 +8,31 @@ The application is built and served using NGINX, containerized with Docker, push
 
 
 
-🛠️ Technologies Used
+# 🛠️ Technologies Used
 
-React.js (Frontend)
+- React.js (Frontend)
 
-Docker (Containerization)
+- Docker (Containerization)
 
-NGINX (Static file server)
+- NGINX (Static file server)
 
-AWS ECR (Container Registry)
+- AWS ECR (Container Registry)
 
-Amazon EKS (Kubernetes Cluster)
+- Amazon EKS (Kubernetes Cluster)
 
-Kubernetes (kubectl)
+- Kubernetes (kubectl)
 
-AWS CodeBuild (Build automation)
+- AWS CodeBuild (Build automation)
 
-AWS CodePipeline (CI/CD)
+- AWS CodePipeline (CI/CD)
 
-AWS CloudWatch (Monitoring)
+- AWS CloudWatch (Monitoring)
 
 
 
         
    
-📂 Project Structure
+# 📂 Project Structure
 
 .
 
@@ -52,15 +52,15 @@ AWS CloudWatch (Monitoring)
 
 
      
-⚙️ Setup Instructions
+# ⚙️ Setup Instructions
 
-🔹 Clone Repository
+**🔹 Clone Repository**
    git clone https://github.com/Vennilavanguvi/Brain-Tasks-App.git
 
    cd Brain-Tasks-App
 
 
-🔹 Build Docker Image
+**🔹 Build Docker Image**
 
   docker build -t brain-tasks-app .
 
@@ -69,7 +69,7 @@ AWS CloudWatch (Monitoring)
   👉 Open: http://localhost:3000
 
 
-🔹 Push Image to ECR
+**🔹 Push Image to ECR**
 
   aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin <ECR_URL>
 
@@ -78,9 +78,9 @@ AWS CloudWatch (Monitoring)
   docker push <ECR_URL>/brain-task:latest
 
 
-☸️ Kubernetes (EKS)
+**☸️ Kubernetes (EKS)**
 
- 🔹Cluster Setup
+ **🔹Cluster Setup**
 
   eksctl create cluster --name brain-cluster --region ap-south-1 --node-type t2.medium --nodes 2
   
@@ -88,19 +88,19 @@ AWS CloudWatch (Monitoring)
   
   kubectl get nodes
 
- 🔹Deployment
+ **🔹Deployment**
 
   kubectl apply -f deployment.yaml
 
   kubectl apply -f service.yaml
 
- 🔹Access Application
+ **🔹Access Application**
 
 kubectl get svc
 
 👉 Copy EXTERNAL-IP and open in browser
 
-🔧 CodeBuild
+# 🔧 CodeBuild
 
 Used to build Docker image
 
@@ -112,7 +112,7 @@ Commands defined in buildspec.yml
 
   
 
-🔐 aws-auth ConfigMap
+**🔐 aws-auth ConfigMap**
 
 Maps IAM roles to Kubernetes RBAC
 
@@ -123,64 +123,64 @@ Worker nodes to join cluster
 CodeBuild to deploy resources
 
 
-🔄 CodePipeline
+# 🔄 CodePipeline
 
-Pipeline flow:
+**Pipeline flow:**
 
 GitHub → CodeBuild → ECR → EKS
 
-🔹 Pipeline Stages
+**🔹 Pipeline Stages**
 
-1. Source Stage
+**1. Source Stage**
        Fetch code from GitHub
-2. Build Stage (CodeBuild)
+**2. Build Stage (CodeBuild)**
        Build Docker image
        Push image to ECR
        Update Kubernetes deployment
-3. Deploy Stage
+**3. Deploy Stage**
         Deploy application to EKS
 
 
-📊 Monitoring (CloudWatch Logs)
+# 📊 Monitoring (CloudWatch Logs)
 
-🔹 Build Logs
+**🔹 Build Logs**
 /aws/codebuild/newproject
 
-🔹 Pipeline Logs
+**🔹 Pipeline Logs**
 /aws/codepipeline/project-1
 
-🔹 Application Logs
+**🔹 Application Logs**
 
 Viewed using:
 
 kubectl logs  pod-name
 
 
-🌐 Application Access
+# 🌐 Application Access
 
 LoadBalancer URL:
 http://abfdd0cb6ea7b487cb4997762fe053df-1603066755.ap-south-1.elb.amazonaws.com
 
 
-🔑 Key Points
+**🔑 Key Points**
 
-Docker is used to containerize the application 
+- Docker is used to containerize the application 
 
-ECR stores Docker images 
+- ECR stores Docker images 
 
-EKS runs containers as pods 
+- EKS runs containers as pods 
 
-CodeBuild automates build and push
+- CodeBuild automates build and push
 
-CodePipeline automates CI/CD workflow
+- CodePipeline automates CI/CD workflow
 
-LoadBalancer exposes application to internet
+- LoadBalancer exposes application to internet
 
-CloudWatch is used for monitoring logs
+- CloudWatch is used for monitoring logs
 
-Kubernetes manages deployment and scaling
+- Kubernetes manages deployment and scaling
 
 
-✅ Conclusion
+# ✅ Conclusion
 
 This project demonstrates a complete CI/CD pipeline with containerized application deployment on AWS EKS.
