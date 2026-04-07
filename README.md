@@ -100,6 +100,16 @@ kubectl get svc
 
 👉 Copy EXTERNAL-IP and open in browser
 
+**🔐 aws-auth ConfigMap**
+
+Maps IAM roles to Kubernetes RBAC
+
+Allows:
+
+Worker nodes to join cluster
+
+CodeBuild to deploy resources
+
 # 🔧 CodeBuild
 
 **🛠️ Steps to Setup CodeBuild**
@@ -152,15 +162,7 @@ CodeBuild automatically runs when triggered by CodePipeline
 
 Executes all commands in buildspec.yml
 
-**🔐 aws-auth ConfigMap**
 
-Maps IAM roles to Kubernetes RBAC
-
-Allows:
-
-Worker nodes to join cluster
-
-CodeBuild to deploy resources
 
 
 # 🔄 CodePipeline
