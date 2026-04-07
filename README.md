@@ -29,27 +29,9 @@ The application is built and served using NGINX, containerized with Docker, push
 - AWS CloudWatch (Monitoring)
 
 
+# 🏗️ Architecture
 
-        
-   
-# 📂 Project Structure
-
-.
-
-├── Dockerfile 
-
-├── buildspec.yml 
-
-├── deployment.yaml
-
-├── service.yaml
-
-├── aws-auth.yaml
-
-├── dist/                  # React production build
-
-└── README.md
-
+GitHub → CodePipeline → CodeBuild → Docker → Amazon ECR → EKS (Kubernetes) → Monitoring
 
      
 # ⚙️ Setup Instructions
