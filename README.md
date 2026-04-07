@@ -1,4 +1,4 @@
-# 🚀 Brain Tasks App Deployment using AWS EKS & CI/CD
+<img width="838" height="923" alt="image" src="https://github.com/user-attachments/assets/1d0a42c8-2db6-4e40-8da2-ded5ca57e56a" /># 🚀 Brain Tasks App Deployment using AWS EKS & CI/CD
 
 # 📌 Project Overview
 
@@ -102,15 +102,55 @@ kubectl get svc
 
 # 🔧 CodeBuild
 
-Used to build Docker image
+**🛠️ Steps to Setup CodeBuild**
 
-Push image to ECR
+**🔹 1. Create CodeBuild Project**
 
-Execute Kubernetes deployment commands
+Go to AWS Console → CodeBuild
 
-Commands defined in buildspec.yml
+Click Create Build Project
 
-  
+**🔹 2. Configure Source**
+
+Source provider: GitHub
+
+Connect your repository
+
+Select the repository and branch
+
+**🔹 3. Configure Environment**
+
+Environment type: Managed Image
+
+OS: Amazon Linux / Ubuntu
+
+Runtime: Standard
+
+Enable Privileged Mode ✅ (required for Docker)
+
+Privileged mode allows Docker commands inside CodeBuild
+
+**🔹 4. Configure Service Role**
+
+Create or select IAM role
+
+Permissions required:
+
+- ECR / DockerHub access
+
+- EKS access
+
+- CloudWatch logs
+- 
+**🔹 5. Add Buildspec File**
+
+Create a file named buildspec.yml in your project:
+
+**🔹6. Build Execution**
+
+CodeBuild automatically runs when triggered by CodePipeline
+
+Executes all commands in buildspec.yml
 
 **🔐 aws-auth ConfigMap**
 
