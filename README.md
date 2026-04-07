@@ -59,6 +59,9 @@ The application is built and served using NGINX, containerized with Docker, push
 
    cd Brain-Tasks-App
 
+   
+# 🐳 Docker Commands
+
 
 **🔹 Build Docker Image**
 
