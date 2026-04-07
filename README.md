@@ -1,4 +1,4 @@
-<img width="838" height="923" alt="image" src="https://github.com/user-attachments/assets/1d0a42c8-2db6-4e40-8da2-ded5ca57e56a" /># 🚀 Brain Tasks App Deployment using AWS EKS & CI/CD
+# 🚀 Brain Tasks App Deployment using AWS EKS & CI/CD
 
 # 📌 Project Overview
 
