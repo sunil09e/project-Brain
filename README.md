@@ -141,7 +141,7 @@ Permissions required:
 - EKS access
 
 - CloudWatch logs
-- 
+ 
 **🔹 5. Add Buildspec File**
 
 Create a file named buildspec.yml in your project:
@@ -165,6 +165,80 @@ CodeBuild to deploy resources
 
 # 🔄 CodePipeline
 
+**Pipeline Configuration Steps**
+
+**🔹 Step 1: Choose Pipeline Type**
+
+Select: Build custom pipeline
+
+**🔹 Step 2: Define Pipeline Settings**
+
+Enter the pipeline name.
+
+Service role configured for permissions
+
+**🔹 Step 3: Add Source Stage**
+
+Connected GitHub repository
+
+Selected branch (main/master)
+
+Enabled automatic trigger on code push
+
+**🔹 Step 4: Add Build Stage**
+
+Integrated with AWS CodeBuild
+
+Used buildspec.yml to define build steps
+
+**🔹Step 5: Add Deploy Stage**
+
+**🔹 Deploy Provider**
+
+Select: Amazon EKS
+
+👉 This enables direct deployment to the Kubernetes cluster managed by AWS
+
+**🔹 Region**
+
+Selected: Asia Pacific (Mumbai)
+
+👉 Ensures deployment happens in the same region where EKS cluster is hosted
+
+**🔹 Input Artifacts**
+
+Use: SourceArtifact
+
+👉 This contains the application code and Kubernetes YAML files from the source stage
+
+**🔹 EKS Cluster**
+
+Selected the created EKS cluster
+
+👉 This is the target environment where the application is deployed
+
+**🔹 Deployment Type**
+
+Selected: Kubectl
+
+👉 Reason:
+
+Allows direct execution of Kubernetes commands
+
+Uses YAML files for deployment
+
+Provides flexibility compared to Helm
+
+**🔹 Manifest Files**
+
+deployment.yaml, service.yaml
+
+👉 These files define:
+
+Deployment → Application pods
+
+Service → Exposes application using LoadBalancer
+
 **Pipeline flow:**
 
 GitHub → CodeBuild → ECR → EKS
@@ -186,6 +260,10 @@ GitHub → CodeBuild → ECR → EKS
 **3. Deploy Stage**
     
         Deploy application to EKS
+
+**⚠️ Key Rule**
+
+👉CodePipeline region MUST be same as EKS cluster region
 
 
 # 📊 Monitoring (CloudWatch Logs)
